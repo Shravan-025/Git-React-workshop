@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="data"></div>
+    <script>
+        //asnc and fetch
+        let div = document.querySelector("#data")
+        let fun = async() => {
+            let data = await fetch("https://randomuser.me/api/")
+            data = await data.json()
+            let na = data['results'][0]['name']['first']
+            div.innerHTML = na
+            console.log(data)
+        }
+        fun()
+        console.log("hello")
+    </script>
+</body>
+</html>
